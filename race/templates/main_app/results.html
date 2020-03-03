@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{% extends "main_app/base.html" %}
+  {% block body_block %}
+    <h1>RESULTADOS</h1>
+    <div class="container">
+      <form method="POST">
+        {{form.as_p}}
+        {% csrf_token %}
+        <input type="submit" class="btn btn-success" value="Submit">
+      </form>
+      <div class="container">
+
+        {% if runner_data %}
+
+          <ul>
+            <li>{{ runner_data.first_name }}</li>
+            <li>{{ runner_data.first_lastname }}</li>
+          </ul>
+        {% else %}
+            <p>No existe el corredor</p>
+            {{ runner_data.first_name }}
+
+        {% endif %}
+
+      </div>
+
+
+    </div>
+    {% endblock %}

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+
+{% extends "main_app/base.html" %}
+  {% block body_block %}
+
+
+
+    <form method="POST">
+        {{ form.as_p }}
+
+        {% csrf_token %}
+        <input type="submit" class="btn btn-success" value="Resgistrar">
+    </form>
+
+    {% endblock %}
